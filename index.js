@@ -8,7 +8,7 @@ const wss = new WebSocket.Server({ port: PORT }, () => {
   console.log(`WebSocket server started on port ${PORT}`);
 });
 
-const redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379');
+const redis = new Redis(process.env.REDIS_URL, { family: 0 });
 
 const CHANNEL = 'zen_sushi_database_orders';
 
